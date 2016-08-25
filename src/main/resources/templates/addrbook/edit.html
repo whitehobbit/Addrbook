@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>주소록:수정화면</title>
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container" align="center">
+    <h2>주소록 : 수정화면</h2>
+    <hr />
+    [<a href="list.html" th:href="@{/addrbook/list}">주소록 목록으로</a>]
+    <div class="col-sm-12">
+        <form th:action="@{/addrbook}" th:object="${addrbookForm}"
+              class="form-horiaontal" method="post">
+            <table class="table table-striped table-bordered table-condensed">
+                <tr>
+                    <td>이 름</td>
+                    <td>
+                        <input type="text" id="ab_name" name="ab_name" maxlength="15" th:field="*{ab_name}" class="form-control">
+                        <span th:if="${#fields.hasErrors('ab_name')}" th:errors="*{ab_name}" class="help-block">error!</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>
+                        <input type="email" id="ab_email" name="ab_email" maxlength="50" th:field="*{ab_email}" class="form-control">
+                        <span th:if="${#fields.hasErrors('ab_email')}" th:errors="*{ab_email}" class="help-block">error!</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>전화번호</td>
+                    <td>
+                        <input type="text" id="ab_tel" name="ab_tel" maxlength="20" th:field="*{ab_tel}" class="form-control">
+                        <span th:if="${#fields.hasErrors('ab_tel')}" th:errors="*{ab_tel}" class="help-block">error!</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>생 일</td>
+                    <td>
+                        <input type="date" id="ab_birth" name="ab_birth" th:field="*{ab_birth}" class="form-control">
+                        <span th:if="${#fields.hasErrors('ab_birth')}" th:errors="*{ab_birth}" class="help-block">error!</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>회 사</td>
+                    <td>
+                        <input type="text" id="ab_comdept" name="ab_comdept" maxlength="20" th:field="*{ab_comdept}" class="form-control">
+                        <span th:if="${#fields.hasErrors('ab_comdept')}" th:errors="*{ab_comdept}" class="help-block">error!</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>메 모</td>
+                    <td>
+                        <input type="text" id="ab_memo" name="ab_memo" th:field="*{ab_memo}" class="form-control">
+                        <span th:if="${#fields.hasErrors('ab_memo')}" th:errors="*{ab_memo}" class="help-block">error!</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button type="submit" class="btn btn-primary">저장</button>
+                        <button type="reset" class="btn btn-danger">취소</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>

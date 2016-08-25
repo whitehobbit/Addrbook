@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>주소록:목록화면</title>
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container" align="center">
+    <h2>주소록 : 목록화면</h2>
+    <hr />
+    <div class="col-sm-12">
+        <a href="/addrbook/form" th:href="@{/addrbook/form}">주소록 등록</a>
+        <table class="table table-striped table-bordered table-condensed">
+            <thead>
+            <tr>
+                <th>번호</th><th>이 름</th><th>이메일</th><th>전화번호</th><th>생 일</th><th>회 사</th><th>메 모</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="addrbook : ${addrbooks}">
+                <td th:text="${addrbook.ab_id}">0</td>
+                <td th:text="${addrbook.ab_name}">홍길</td>
+                <td th:text="${addrbook.ab_email}">email@email.com</td>
+                <td th:text="${addrbook.ab_tel}">010-0000-0000</td>
+                <td th:text="${addrbook.ab_birth}">2000.01.01</td>
+                <td th:text="${addrbook.ab_comdept}">company</td>
+                <td th:text="${addrbook.ab_memo}">memo</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
