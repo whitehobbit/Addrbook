@@ -1,1 +1,0 @@
-CREATE TABLE `dev_JSP`.`Addrbook` ( `ab_id` INT(9) NOT NULL AUTO_INCREMENT , `ab_name` VARCHAR(30) NOT NULL , `ab_email` VARCHAR(30) NOT NULL , `ab_tel` VARCHAR(30) NOT NULL , `ab_birth` VARCHAR(20) NOT NULL , `ab_comdept` VARCHAR(30) NOT NULL , `ab_memo` VARCHAR(100) NOT NULL , PRIMARY KEY (`ab_id`)) ENGINE = InnoDB;
